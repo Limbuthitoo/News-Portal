@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\NepalnewsController;
+use App\Http\Controllers\Backend\PostController;
 
 
 
@@ -26,3 +27,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/nepalnews',NepalnewsController::class);
+Route::resource('/posts',PostController::class);
