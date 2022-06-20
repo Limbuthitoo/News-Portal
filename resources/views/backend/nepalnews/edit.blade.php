@@ -7,7 +7,6 @@
                     <span class="h3">General Setting</span>
                 </div>
                 <div class="card-body">
-
                     <form action="/nepalnews/{{ $company->id }}" method="post" class="form-sample"
                         enctype="multipart/form-data">
                         @csrf
@@ -17,23 +16,16 @@
                             <input class="form-control" type="text" id="name" name="name"
                                 value="{{ $company->name }}">
                         </div>
-
-
                         <div class="form-group">
                             <label for="address" class="">Company Address:</label>
                             <input class="form-control" type="text" id="address" name="address"
                                 value="{{ $company->address }}">
                         </div>
-
-
                         <div class="form-group">
                             <label for="email" class="">Company Email:</label>
                             <input class="form-control" type="text" id="email" name="email"
                                 value="{{ $company->email }}">
                         </div>
-
-
-
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -41,7 +33,6 @@
                                     <input class="form-control" type="text" id="contact" name="contact"
                                         value="{{ $company->contact }}">
                                 </div>
-
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -49,9 +40,7 @@
                                     <input class="form-control" type="text" id="registration" name="registration"
                                         value="{{ $company->registration }}">
                                 </div>
-
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -100,7 +89,7 @@
                             <input class="form-control" type="file" id="logo" name="logo"
                                 placeholder="Update Logo" accept="image/jpg, image/png">
                         </div>
-                        <button type="submit" class="btn btn-success">Save
+                        <button type="submit" class="btn btn-success">Update
                             Record</button>
                         <a href="/nepalnews" class="btn btn-danger">Cancel</a>
                     </form>

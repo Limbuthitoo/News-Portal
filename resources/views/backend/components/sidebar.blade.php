@@ -77,8 +77,7 @@
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="/nepalnews">Company Information</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="/post">Post</a></li>
-
+                    <li class="nav-item"> <a class="nav-link" href="/posts">Post</a></li>
                 </ul>
             </div>
         </li>

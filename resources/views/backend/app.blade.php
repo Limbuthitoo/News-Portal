@@ -22,6 +22,14 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/assets/images/favicon.png" />
+
+    <!-- ckeditor -->
+    <style>
+        .ck-editor__editable_inline {
+            min-height: 200px;
+            color: black;
+        }
+        </style>
 </head>
 
 <body>
@@ -281,6 +289,20 @@
     <!-- Custom js for this page -->
     <script src="/assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
+
+    <!-- Ckeditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+
+            .create( document.querySelector( '#description' ) )
+
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+
+
 </body>
 
 </html>
