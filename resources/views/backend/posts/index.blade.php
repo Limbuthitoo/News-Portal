@@ -11,14 +11,14 @@
             <div class="row">
                 @foreach ($posts as $post)
                 <div class="col-md-3">
-                    <div class="card">
+                    <div class="card p-2" style="background-color: white; ">
 
                         <img src="{{$post->featured}}" alt=""  class="card-img-top">
                         <div class="py-2"></div>
-                            <div class="card-title">
+                            <div class="card-title" style="color:black;">
                                 <p>{{$post->title}}</p>
                             </div>
-                            <div>
+                            <div class="px-3">
                                 <form action="/posts/{{$post->id}}" method="post">
                                 @csrf
                                 @method('delete')
