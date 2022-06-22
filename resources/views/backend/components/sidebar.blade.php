@@ -75,6 +75,14 @@
             </a>
         </li>
         <li class="nav-item menu-items">
+            <a class="nav-link" href="/ads">
+                <span class="menu-icon">
+                    <i class="mdi mdi-table-large"></i>
+                </span>
+                <span class="menu-title">Ads</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-icon">
                     <i class="mdi mdi-laptop"></i>
@@ -90,14 +98,7 @@
             </div>
         </li>
 
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-icon">
-                    <i class="mdi mdi-table-large"></i>
-                </span>
-                <span class="menu-title">Tables</span>
-            </a>
-        </li>
+
         <li class="nav-item menu-items">
             <a class="nav-link" href="pages/charts/chartjs.html">
                 <span class="menu-icon">

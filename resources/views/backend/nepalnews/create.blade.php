@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="continer col-12 grid-margin stretch-card">
-            <div class="card">
+            <div class="card p-4">
                 <div class="card-title">
                     <span class="h3">General Setting</span>
                 </div>

@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Ad;
 use Illuminate\Support\Str;
 
-class PostController extends Controller
+
+
+class AdController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +18,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view("backend.posts.index",compact("posts"));
+        $ads = Ad::all();
+        return view("backend.ads.index",compact("ads"));
     }
 
     /**
@@ -27,7 +29,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view("backend.posts.create");
+        return view("backend.ads.create");
+
     }
 
     /**
@@ -38,20 +41,23 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new Post();
-        $post ->title = $request ->title;
-        $post ->slug = Str::slug($request->title);
-        $post ->description = $request ->description;
-        if($request ->file('featured')){
-            $file = $request -> file("featured");
+        $ad = new Ad();
+        $ad->company_name = $request->company_name;
+        $ad->ad_type = $request->ad_type;
+        $ad->slug = Str::slug($request->ad_type);
+        $ad->link = $request->link;
+        $ad->contact = $request->contact;
+        $ad->detail = $request->detail;
+        if ($request -> file('ad_image')) {
+            $file = $request->file('ad_image');
             $newName = time() . $file->getClientOriginalName();
-            $file ->move("images",$newName);
-            $post ->featured = "images/$newName";
+            $file -> move("images",$newName);
+            $ad->ad_image ="images/$newName";
+            # code...
         }
-        $post ->save();
+        $ad->save();
+        return redirect("/ads");
 
-        $post->categories()->attach($request->categorty_id);
-        return redirect("/posts");
     }
 
     /**
@@ -73,8 +79,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id);
-        return view("backend.posts.edit",compact("post"));
+        $ad = Ad::find($id);
+        return view("backend.ads.edit",compact("ad"));
     }
 
     /**
@@ -86,20 +92,22 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::find($id);
-        $post ->title = $request ->title;
-        $post ->slug = Str::slug($request->title);
-        $post ->description = $request ->description;
-        if($request ->file('featured')){
-            $file = $request -> file("featured");
+        $ad = Ad::find($id);
+        $ad->company_name = $request->company_name;
+        $ad->ad_type = $request->ad_type;
+        $ad->slug = Str::slug($request->ad_type);
+        $ad->link = $request->link;
+        $ad->contact = $request->contact;
+        $ad->detail = $request->detail;
+        if ($request -> file('ad_image')) {
+            $file = $request->file('ad_image');
             $newName = time() . $file->getClientOriginalName();
-            $file ->move("images",$newName);
-            $post ->featured = "images/$newName";
+            $file -> move("images",$newName);
+            $ad->ad_image ="images/$newName";
+            # code...
         }
-        $post ->update();
-        $post->categories()->sync($request->categorty_id);
-
-        return redirect("/posts");
+        $ad->update();
+        return redirect("/ads");
     }
 
     /**
@@ -110,6 +118,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ad = Ad::find($id);
+        $ad->delete();
+        return redirect("/ads");
     }
 }

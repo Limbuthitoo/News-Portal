@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\NepalnewsController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\AdController;
 
 
 
@@ -30,3 +31,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/nepalnews',NepalnewsController::class);
 Route::resource('/posts',PostController::class);
 Route::resource('/categories',CategoryController::class);
+Route::resource('/ads',AdController::class);
