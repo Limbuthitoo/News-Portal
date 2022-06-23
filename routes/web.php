@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\NepalnewsController;
 use App\Http\Controllers\Backend\PostController;
+use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\AdController;
 use Illuminate\Support\Facades\Auth;
@@ -18,9 +19,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [PageController::class, 'home']);
 
 Auth::routes();
 
