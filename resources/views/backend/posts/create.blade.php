@@ -15,6 +15,11 @@
                                 placeholder="Enter post title">
                         </div>
                         <div class="form-group">
+                            <label for="category_id" class="">Category:</label>
+                            <input class="form-control" type="text" id="category_id" name="category_id"
+                                placeholder="Select category">
+                        </div>
+                        <div class="form-group">
                             <label for="description">Description:</label>
                             <textarea id="description" class="form-control" style="color:black;" name="description" rows="3"></textarea>
                         </div>
