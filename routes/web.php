@@ -5,9 +5,7 @@ use App\Http\Controllers\Backend\NepalnewsController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\AdController;
-
-
-
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------

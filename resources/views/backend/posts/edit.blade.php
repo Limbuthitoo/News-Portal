@@ -16,6 +16,17 @@
                                 value="{{$post->title}}">
                         </div>
                         <div class="form-group">
+                            <label for="category_id" class="" for="id_label_multiple">Category:</label>
+                            <select name="category_id[]" id="id_label_multiple" class="select2 js-states form-control" multiple="multiple">
+                                @foreach ($categories as $category)
+                                <option value="{{$category->id}}">
+                                    {{$category->cat_nep}}
+                                </option>
+                                @endforeach
+
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="description">Description:</label>
                             <textarea id="description" class="form-control" style="color:black;" name="description" rows="3">{!!$post->description!!}</textarea>
                         </div>
