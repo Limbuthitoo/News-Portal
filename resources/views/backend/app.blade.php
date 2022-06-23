@@ -24,7 +24,8 @@
     <link rel="shortcut icon" href="/assets/images/favicon.png" />
 
     <!-- select2 -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
 
 
     <!-- ckeditor -->
@@ -33,7 +34,8 @@
             min-height: 200px;
             color: black;
         }
-        </style>
+
+    </style>
 </head>
 
 <body>
@@ -63,45 +65,44 @@
                     <ul class="navbar-nav navbar-nav-right">
                         <li class="nav-item dropdown d-none d-lg-block">
                             <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown"
-                                data-toggle="dropdown" aria-expanded="false" href="#">+ Create New Project</a>
+                                data-toggle="dropdown" aria-expanded="false" href="#">+ Create New</a>
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                                 aria-labelledby="createbuttonDropdown">
-                                <h6 class="p-3 mb-0">Projects</h6>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
+
+
+                                <a href="/posts/create" class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-file-outline text-primary"></i>
                                         </div>
                                     </div>
                                     <div class="preview-item-content">
-                                        <p class="preview-subject ellipsis mb-1">Software Development</p>
+                                        <p class="preview-subject ellipsis mb-1">Article</p>
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
+                                <a href="/categories/create" class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-web text-info"></i>
                                         </div>
                                     </div>
                                     <div class="preview-item-content">
-                                        <p class="preview-subject ellipsis mb-1">UI Development</p>
+                                        <p class="preview-subject ellipsis mb-1">Category</p>
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
+                                <a href="/ads/create" class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-layers text-danger"></i>
                                         </div>
                                     </div>
                                     <div class="preview-item-content">
-                                        <p class="preview-subject ellipsis mb-1">Software Testing</p>
+                                        <p class="preview-subject ellipsis mb-1">Ads</p>
                                     </div>
                                 </a>
-                                <div class="dropdown-divider"></div>
-                                <p class="p-3 mb-0 text-center">See all projects</p>
+
                             </div>
                         </li>
                         <li class="nav-item nav-settings d-none d-lg-block">
@@ -277,6 +278,8 @@
     <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
+    <script src="/assets/vendors/select2/select2.min.js"></script>
+    <script src="/assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
     <script src="/assets/vendors/chart.js/Chart.min.js"></script>
     <script src="/assets/vendors/progressbar.js/progressbar.min.js"></script>
     <script src="/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
@@ -292,6 +295,9 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="/assets/js/dashboard.js"></script>
+    <script src="/assets/js/file-upload.js"></script>
+    <script src="/assets/js/typeahead.js"></script>
+    <script src="/assets/js/select2.js"></script>
     <!-- End custom js for this page -->
 
     <!-- Ckeditor -->
@@ -307,16 +313,7 @@
     </script>
 
     <!-- Select2 javascript -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script>
-       $(document).ready(function() {
-        $(".select2").select2({
-  theme: "classic"
-  placeholder: "Select Categories",
-  
-});
-});
-    </script>
+
 
 </body>
 

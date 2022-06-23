@@ -66,6 +66,14 @@
             </a>
         </li>
         <li class="nav-item menu-items">
+            <a class="nav-link" href="/posts">
+                <span class="menu-icon">
+                    <i class="mdi mdi-playlist-play"></i>
+                </span>
+                <span class="menu-title">Article</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
             <a class="nav-link" href="/categories">
                 <span class="menu-icon">
                     <i class="mdi mdi-playlist-play"></i>
@@ -92,7 +100,7 @@
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="/nepalnews">Company Information</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="/posts">Post</a></li>
+
                 </ul>
             </div>
         </li>

@@ -4,15 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
 
 class Post extends Model
 {
     use HasFactory;
 
-    public function categories()
-{
-    return $this->belogsToMany(Category::class);
-}
+   /**
+    * The roles that belong to the Post
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    */
+   public function categories()
+   {
+       return $this->belongsToMany(Category::class);
+   }
 }
 
 

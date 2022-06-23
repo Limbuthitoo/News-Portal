@@ -51,8 +51,8 @@ class PostController extends Controller
             $post ->featured = "images/$newName";
         }
         $post ->save();
+        $post->categories()->attach($request->category_id);
 
-        $post->categories()->attach($request->categorty_id);
         return redirect("/posts");
     }
 
@@ -75,8 +75,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::all();
         $post = Post::find($id);
-        return view("backend.posts.edit",compact("post"));
+        return view("backend.posts.edit",compact("post","categories"));
     }
 
     /**
@@ -99,7 +100,7 @@ class PostController extends Controller
             $post ->featured = "images/$newName";
         }
         $post ->update();
-        $post->categories()->sync($request->categorty_id);
+        $post->categories()->sync($request->category_id);
 
         return redirect("/posts");
     }
@@ -114,6 +115,6 @@ class PostController extends Controller
     {
         $post = Post::find($id);
         $post->delete();
-        return redirect("/post");
+        return redirect("/posts");
     }
 }
