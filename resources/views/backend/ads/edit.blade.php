@@ -7,7 +7,7 @@
                     <span class="h3">Add Ad </span>
                 </div>
                 <div class="card-body">
-                    <form action="/ads" method="post" class="form-sample" enctype="multipart/form-data">
+                    <form action="/ads/{{$ad->id}}" method="post" class="form-sample" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="form-group">

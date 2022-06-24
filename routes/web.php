@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Auth;
 //     return view('welcome');
 // });
 Route::get('/', [PageController::class, 'home']);
+Route::get('/category/{slug}', [PageController::class, 'category']);
 
 Auth::routes();
 

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-2">
-                <img src="{{$nepalnews->logo}}" alt="" width="300" class="img-fluid">
+                <img src="{{asset($nepalnews->logo)}}" alt="" width="300" class="img-fluid">
             </div>
             <div class="col-lg-7">
                 <div class="row">
