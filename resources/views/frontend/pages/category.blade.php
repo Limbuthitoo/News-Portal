@@ -1,5 +1,19 @@
 @extends('frontend.app')
 
 @section('content')
-    <h1></h1>
+    <div class="container">
+        <div class="row g-4 py-3">
+            @foreach ($posts as  $post)
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <h4 class="card-header fw-bold">{{$post->title}}</h4>
+                    <img src="{{asset($post->featured)}}" alt="" class="img-fluid">
+                    <div class="card-body">
+                        <p>{!!Str::limit($post->description,300)!!}</p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
 @endsection

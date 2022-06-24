@@ -8,10 +8,10 @@
 
         </div>
         <div class="card-body">
-            <div class="row">
+            <div class="row g-2">
                 @foreach ($posts as $post)
                 <div class="col-md-3">
-                    <div class="card p-2" style="background-color: white; ">
+                    <div class="card p-2 h-100" style="background-color: white; ">
 
                         <img src="{{$post->featured}}" alt=""  class="card-img-top">
                         <div class="py-2"></div>

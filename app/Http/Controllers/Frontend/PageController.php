@@ -14,7 +14,8 @@ class PageController extends Controller
     public function home()
     {
         /*===========Ads Infomtation=============*/
-        $adstop= Ad::where('slug','topad')->first();
+        $adstop= Ad::where('slug','topbarad')->first();
+        $headad= Ad::where('slug','header-ad')->first();
 
         /*===========Company Infomtation=============*/
         $nepalnews =Nepalnews::first();
@@ -23,18 +24,19 @@ class PageController extends Controller
         $menus = Category::all();
 
         // Latest pOST
-        $latestPost = Post::orderBy('id','desc')->limit(3);
+        $posts = Post::orderBy('id','desc')->limit(2)->get();
 
-        //Society
-        $category = $menus->where('slug','society')->first();
-        $society = $category->posts;
+        //Politics
+        $category = $menus->where('slug','politics')->first();
+        $politics = $category->posts;
 
-        return view("frontend.pages.home",compact('nepalnews','adstop','menus','latestPost','society'));
+        return view("frontend.pages.home",compact('nepalnews','adstop','menus','posts','politics','headad'));
     }
     public function category($slug)
     {
+
           /*===========Ads Infomtation=============*/
-          $adstop= Ad::where('slug','topad')->first();
+          $adstop= Ad::where('slug','topbarad')->first();
 
           /*===========Company Infomtation=============*/
           $nepalnews =Nepalnews::first();
@@ -42,7 +44,7 @@ class PageController extends Controller
           /*===========Company Infomtation=============*/
           $menus = Category::all();
           $category = Category::where('slug',$slug)->first();
-         $posts =  $category->posts;
+          $posts =  $category->posts;
 
 
         return view('frontend.pages.category',compact('nepalnews','adstop','menus','posts'));

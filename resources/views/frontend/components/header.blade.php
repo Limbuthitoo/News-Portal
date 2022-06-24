@@ -5,7 +5,10 @@
         </div>
         <div class="col-md-3 py-2"></div>
         <div class="col-md-6 float-end">
-            <a href=""><img src="{{asset($adstop->ad_image)}}" class="img-fluid" alt=""></a>
+            <div class="card">
+                <a href=""><img src="{{asset($adstop->ad_image)}}" class=" card-img-top overflow-hidden" alt=""></a>
+            </div>
+
         </div>
     </div>
 </div>
