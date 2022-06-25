@@ -8,7 +8,7 @@
                     <a href="/posts/create" class="btn btn-success float-right">Add Article</a>
 
             </div>
-            <div class="card-body text-center">
+            <div class="card-body ">
                 <div class="row">
                     @foreach ($posts as $post)
                     <div class="col-lg-3 grid-margin">
@@ -16,8 +16,8 @@
 
                             <img src="{{$post->featured}}" alt=""  class="card-img-top">
                             <div class="py-2"></div>
-                                <div class="card-title" style="color:black;">
-                                    <p>{{$post->title}}</p>
+                                <div class="card-title text-center" style="color:black;">
+                                    <p class="h5">{{$post->title}}</p>
                                 </div>
                                 <div class="px-3">
                                     <form action="/posts/{{$post->id}}" method="post">
