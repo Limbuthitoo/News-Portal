@@ -10,8 +10,8 @@
         <div class="card-body">
             <div class="row">
                 @foreach ($ads as $ad)
-                <div class="col-md-3">
-                    <div class="card p-2" style="background-color: white; ">
+                <div class="col-md-3 grid-margin">
+                    <div class="card p-2 h-100" style="background-color: white; ">
 
                         <img src="{{$ad->ad_image}}" alt=""  class="card-img-top">
                         <div class="py-2"></div>

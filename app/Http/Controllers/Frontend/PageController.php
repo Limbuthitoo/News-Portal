@@ -14,7 +14,7 @@ class PageController extends Controller
     public function home()
     {
         /*===========Ads Infomtation=============*/
-        $adstop= Ad::where('slug','topbarad')->first();
+        $adstop= Ad::where('slug','topbar-ad')->first();
         $headad= Ad::where('slug','header-ad')->first();
 
         /*===========Company Infomtation=============*/
@@ -36,7 +36,7 @@ class PageController extends Controller
     {
 
           /*===========Ads Infomtation=============*/
-          $adstop= Ad::where('slug','topbarad')->first();
+          $adstop= Ad::where('slug','topbar-ad')->first();
 
           /*===========Company Infomtation=============*/
           $nepalnews =Nepalnews::first();
