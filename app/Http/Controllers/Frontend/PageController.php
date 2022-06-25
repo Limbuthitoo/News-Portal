@@ -27,10 +27,10 @@ class PageController extends Controller
         $posts = Post::orderBy('id','desc')->limit(2)->get();
 
         //Politics
-        $category = $menus->where('slug','politics')->first();
+        $category = Category::where('slug','politics')->first();
         $politics = $category->posts;
 
-        return view("frontend.pages.home",compact('nepalnews','adstop','menus','posts','politics','headad'));
+        return view("frontend.pages.home",compact('nepalnews','adstop','menus','posts','politics','headad','category'));
     }
     public function category($slug)
     {
