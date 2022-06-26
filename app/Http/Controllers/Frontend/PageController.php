@@ -8,6 +8,7 @@ use App\Models\Ad;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\PostDec;
 
 class PageController extends Controller
 {
@@ -44,14 +45,29 @@ class PageController extends Controller
 
           /*===========Company Infomtation=============*/
           $menus = Category::all();
+
+          /*===========Company category Post=============*/
+
           $category = Category::where('slug',$slug)->first();
           $posts =  $category->posts;
 
 
         return view('frontend.pages.category',compact('nepalnews','adstop','menus','posts'));
     }
-    public function newsdetail()
+    public function newsdetail($id)
     {
-        return view('frontend.pages.newsdetail');
+         /*===========Ads Infomtation=============*/
+         $adstop= Ad::where('slug','topbar-ad')->first();
+
+         /*===========Company Infomtation=============*/
+         $nepalnews =Nepalnews::first();
+
+         /*===========Company Infomtation=============*/
+         $menus = Category::all();
+
+         /*===========Company Post=============*/
+
+         $posts = Post::find($id);
+        return view('frontend.pages.newsdetail',compact('adstop','nepalnews','menus','posts'));
     }
 }

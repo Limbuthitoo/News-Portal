@@ -24,6 +24,8 @@ use Illuminate\Support\Facades\Auth;
 // });
 Route::get('/', [PageController::class, 'home']);
 Route::get('/category/{slug}', [PageController::class, 'category']);
+Route::get('/news/{id}', [PageController::class, 'newsdetail']);
+
 
 Auth::routes();
 
