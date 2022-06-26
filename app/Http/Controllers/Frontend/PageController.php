@@ -32,7 +32,11 @@ class PageController extends Controller
         $category = Category::where('slug','politics')->first();
         $politics = $category->posts;
 
-        return view("frontend.pages.home",compact('nepalnews','adstop','menus','posts','politics','headad','bodyad','category'));
+        //Sports
+        $catSport = Category::where('slug','sports')->first();
+        $sports = $catSport -> posts;
+
+        return view("frontend.pages.home",compact('nepalnews','adstop','menus','posts','politics','headad','bodyad','category','sports','catSport'));
     }
     public function category($slug)
     {

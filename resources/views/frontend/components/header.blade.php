@@ -28,17 +28,24 @@
        @if ($index == 0)
         <li class="nav-item px-2 ">
             <a class="nav-link fw-bold text-white" aria-current="page" href="/">{{$menu->cat_nep}}</a>
-
             </li>
-        @else
+        @elseif ($index>0 && $index<10)
         <li class="nav-item px-3 ">
             <a class="nav-link fw-bold text-white" aria-current="page" href="/category/{{ $menu->slug }}">{{$menu->cat_nep}}</a>
-
-
         </li>
-       @endif
-
-
+        <!-- Dropdown Menu -->
+        @else
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white fw-bold" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    थप+
+                </a>
+                <ul class="dropdown-menu dropdown-menu-danger" aria-labelledby="navbarDangerDropdownMenuLink">
+                  <li><a class="dropdown-item text-danger fw-bold" href="/category/{{ $menu->slug }}">{{$menu->cat_nep}}</a></li>
+                </ul>
+              </li>
+            </ul>
+        @endif
         @endforeach
         </ul>
       </div>
