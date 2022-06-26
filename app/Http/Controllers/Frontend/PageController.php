@@ -56,6 +56,7 @@ class PageController extends Controller
           $posts =  $category->posts;
 
 
+
         return view('frontend.pages.category',compact('nepalnews','adstop','menus','posts'));
     }
     public function newsdetail($id)
