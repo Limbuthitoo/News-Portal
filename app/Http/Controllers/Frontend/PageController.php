@@ -24,7 +24,7 @@ class PageController extends Controller
         $menus = Category::all();
 
         // Latest pOST
-        $posts = Post::orderBy('id','desc')->limit(2)->get();
+        $posts = Post::orderBy('id','desc')->get();
 
         //Politics
         $category = Category::where('slug','politics')->first();

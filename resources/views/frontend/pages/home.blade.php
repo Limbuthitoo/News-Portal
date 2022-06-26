@@ -30,7 +30,7 @@
     <div class="py-3"></div>
 <div class="row">
     @foreach ($posts as $index=>$post )
-        @if ($index>0)
+        @if ($index>0 && $index<=1)
         <div class="card-body text-center">
             <h1 class="card-title fw-bold">{{$post->title}}</h1>
             <div><p class="py-3 px-4 text-end"><span class="fw-bold">Updated at:</span> {{$post->created_at->diffForHumans()}}</p></div>
