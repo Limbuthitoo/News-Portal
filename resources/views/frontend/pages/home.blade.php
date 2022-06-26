@@ -44,6 +44,63 @@
 </div>
 <div class="container">
     <div class="row">
+        <div class="col-lg-12">
+
+            <div class="row">
+
+                    <div class="row">
+                        <div class="col-lg-12 d-flex justify-content-between py-3 px-4 bg-light">
+                            <span class="fw-bold">
+                                ताजा अपडेट
+                            </span>
+                            <span>
+                                <a href="" class="nav-link fw-bold">थप+</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 py-3">
+                        <div class="row">
+                            @foreach ($posts as $index=>$post)
+                            @if ($index>2 && $index <=4 )
+                            <div class="col-lg-6">
+                                <div class="card overflow-hidden">
+                                    <img src="{{asset($post->featured)}}" class="img-fluid" alt="">
+                                    <div class="card-body text-center">
+                                        <h5 class="fw-bold">{{$post->title}}</h5>
+                                        <p style="font-size: 12px">{{$post->created_at->diffForHumans()}}</p>
+                                        <div class="py-1" style="font-size: 15px">{!!Str::limit($post->description,200)!!}</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="col-lg-4 py-4">
+                        <div class="row">
+                            @foreach ($posts as $index=>$post)
+                                @if ($index>4 && $index<10)
+                                    <div class="col-4">
+                                        <img src="{{asset($post->featured)}}" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-8">
+                                        <h6 class="fw-bold">{{Str::limit($post->title,50)}}</h6>
+                                        <p style="font-size: 12px">{{$post->created_at->diffForHumans()}}</p>
+                                    </div>
+                                @endif
+                            @endforeach
+
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
         <div class="col-lg-8">
 
             <div class="row">
