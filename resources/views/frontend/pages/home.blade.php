@@ -64,7 +64,7 @@
                     <div class="col-lg-8 py-3">
                         <div class="row">
                             @foreach ($posts as $index=>$post)
-                            @if ($index>2 && $index <=4 )
+                            @if ($index>1 && $index <=3 )
                             <div class="col-lg-6">
                                 <div class="card overflow-hidden">
                                     <img src="{{asset($post->featured)}}" class="img-fluid" alt="">
@@ -83,7 +83,7 @@
                     <div class="col-lg-4 py-4">
                         <div class="row">
                             @foreach ($posts as $index=>$post)
-                                @if ($index>4 && $index<10)
+                                @if ($index>3 && $index<9)
                                     <div class="py-1 d-flex ">
                                         <div class="col-4">
                                             <img src="{{asset($post->featured)}}" class="img-fluid" alt="">
