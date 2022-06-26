@@ -16,6 +16,7 @@ class PageController extends Controller
         /*===========Ads Infomtation=============*/
         $adstop= Ad::where('slug','topbar-ad')->first();
         $headad= Ad::where('slug','header-ad')->first();
+        $bodyad= Ad::where('slug','body-ad')->first();
 
         /*===========Company Infomtation=============*/
         $nepalnews =Nepalnews::first();
@@ -30,7 +31,7 @@ class PageController extends Controller
         $category = Category::where('slug','politics')->first();
         $politics = $category->posts;
 
-        return view("frontend.pages.home",compact('nepalnews','adstop','menus','posts','politics','headad','category'));
+        return view("frontend.pages.home",compact('nepalnews','adstop','menus','posts','politics','headad','bodyad','category'));
     }
     public function category($slug)
     {

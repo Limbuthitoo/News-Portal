@@ -7,6 +7,7 @@
     <hr class="text-muted">
 </div>
 
+<!-- home news -->
 <div class="container ">
     <div class="row">
         @foreach ($posts as $index=>$post )
@@ -42,7 +43,9 @@
 
 <hr class="text-muted">
 </div>
-<div class="container">
+
+<!-- Latest News -->
+<div class="container py-5">
     <div class="row">
         <div class="col-lg-12">
 
@@ -81,12 +84,14 @@
                         <div class="row">
                             @foreach ($posts as $index=>$post)
                                 @if ($index>4 && $index<10)
-                                    <div class="col-4">
-                                        <img src="{{asset($post->featured)}}" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="col-8">
-                                        <h6 class="fw-bold">{{Str::limit($post->title,50)}}</h6>
-                                        <p style="font-size: 12px">{{$post->created_at->diffForHumans()}}</p>
+                                    <div class="py-1 d-flex ">
+                                        <div class="col-4">
+                                            <img src="{{asset($post->featured)}}" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="col-8 px-3">
+                                            <h6 class="fw-bold">{{Str::limit($post->title,50)}}</h6>
+                                            <p style="font-size: 12px">{{$post->created_at->diffForHumans()}}</p>
+                                        </div>
                                     </div>
                                 @endif
                             @endforeach
@@ -98,8 +103,20 @@
         </div>
 
     </div>
+
 </div>
+
+
+<!-- Body_ad Here -->
 <div class="container">
+    <hr class="text-muted">
+    <div class="py-2"><div class="card overflow-hidden">
+        <a href=""><img src="{{asset($bodyad->ad_image)}}" alt="" class="card-img-top img-fluid"></a>
+    </div></div>
+    <hr class="text-muted">
+</div>
+<!-- Politics News -->
+<div class="container py-5">
     <div class="row">
         <div class="col-lg-8">
 
