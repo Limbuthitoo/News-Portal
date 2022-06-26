@@ -26,7 +26,7 @@
         <ul class="navbar-nav py-2">
         @foreach ($menus as $index=> $menu)
        @if ($index == 0)
-        <li class="nav-item px-3 ">
+        <li class="nav-item px-2 ">
             <a class="nav-link fw-bold text-white" aria-current="page" href="/">{{$menu->cat_nep}}</a>
 
             </li>

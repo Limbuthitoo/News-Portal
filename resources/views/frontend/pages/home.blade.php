@@ -65,7 +65,7 @@
                                 ताजा अपडेट
                             </span>
                             <span>
-                                <a href="" class="nav-link fw-bold">थप+</a>
+                                <a href="" class="nav-link fw-bold text-danger">थप+</a>
                             </span>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                                 {{$category->cat_nep}}
                             </span>
                             <span>
-                                <a href="" class="nav-link fw-bold">थप+</a>
+                                <a href="" class="nav-link fw-bold text-danger">थप+</a>
                             </span>
                         </div>
                     </div>
@@ -169,10 +169,10 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="col-lg-6 py-4">
+                    <div class="col-lg-6 py-3">
                         <div class="row gy-3">
                             @foreach ($politics as $index=> $politic)
-                                @if ($index>0 && $index<7)
+                                @if ($index>0 && $index<6)
                                 <div class="col-lg-12">
                                     <div class="row ">
                                         <a href="/news/{{$politic->id}}" class="d-flex">
