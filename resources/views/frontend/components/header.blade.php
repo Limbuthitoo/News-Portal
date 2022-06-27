@@ -6,7 +6,9 @@
         <div class="col-md-3 py-2"></div>
         <div class="col-md-6 float-end">
             <div class="card overflow-hidden">
+                @if (!empty($adstop))
                 <a href=""><img src="{{asset($adstop->ad_image)}}" class=" card-img-top" alt=""></a>
+                @endif
             </div>
         </div>
     </div>

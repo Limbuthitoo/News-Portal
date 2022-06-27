@@ -36,9 +36,11 @@
          <div class="container">
             <hr class="text-muted">
             <div class="py-2"><div class="card overflow-hidden">
+                @if (!empty($catbodyad))
                 <a href="{{$catbodyad->link}}" target="_blank" >
                     <img src="{{asset($catbodyad->ad_image)}}" alt="" class="card-img-top img-fluid">
                 </a>
+                @endif
             </div>
         </div>
             <hr class="text-muted">

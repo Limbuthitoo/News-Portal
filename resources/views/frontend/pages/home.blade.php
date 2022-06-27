@@ -2,7 +2,9 @@
 @section('content')
 <div class="container py-3">
     <div class="card overflow-hidden">
-        <a href=""><img src="{{asset($headad->ad_image)}}" alt="" class="card-img-top img-fluid"></a>
+        @if (!empty($headad))
+            <a href=""><img src="{{asset($headad->ad_image)}}" alt="" class="card-img-top img-fluid"></a>
+        @endif
     </div>
     <hr class="text-muted">
 </div>
@@ -109,7 +111,9 @@
 <div class="container">
     <hr class="text-muted">
     <div class="py-2"><div class="card overflow-hidden">
+        @if (!empty($bodyad))
         <a href=""><img src="{{asset($bodyad->ad_image)}}" alt="" class="card-img-top img-fluid"></a>
+        @endif
     </div></div>
     <hr class="text-muted">
 </div>
