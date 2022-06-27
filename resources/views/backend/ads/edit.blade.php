@@ -16,9 +16,13 @@
                                 value="{{$ad->company_name}}">
                         </div>
                         <div class="form-group">
-                            <label for="ad_type" class="">Ads Type:</label>
-                            <input class="form-control" type="text" id="ad_type" name="ad_type"
-                            value="{{$ad->ad_type}}">
+                            <label for="ad_type">Ads Type</label>
+                            <select id="ad_type" class="form-control" name="ad_type">
+                                <option value="topbar_ad">Top ads</option>
+                                <option value="header_ad">Header ads</option>
+                                <option value="catbody_ad">Category body ads</option>
+                                <option value="body_ad">body ads</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="link" class="">Link:</label>
