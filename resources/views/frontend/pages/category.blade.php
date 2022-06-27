@@ -13,7 +13,9 @@
                             </div>
                             <img src="{{asset($post->featured)}}" alt="" class="img-fluid">
                             <div class="card-body">
-                                <p>{!!Str::limit($post->description,350)!!}</p>
+                                <p>
+                                    {!!Str::limit($post->description,350)!!}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -22,15 +24,20 @@
                 </div>
             </div>
             <div class="col-lg-3">
-
+                <div class="card h-100 text-center">
+                    <h1>ad here</h1>
+                </div>
             </div>
         </div>
          <!-- Body_ad Here -->
          <div class="container">
             <hr class="text-muted">
             <div class="py-2"><div class="card overflow-hidden">
-                <a href=""><img src="{{asset($catbodyad->ad_image)}}" alt="" class="card-img-top img-fluid"></a>
-            </div></div>
+                <a href="">
+                    <img src="{{asset($catbodyad->ad_image)}}" alt="" class="card-img-top img-fluid">
+                </a>
+            </div>
+        </div>
             <hr class="text-muted">
         </div>
         <div class="row g-3">
@@ -42,9 +49,15 @@
                                 <h4 class="card-header fw-bold py-3">{{$post->title}}</h4>
                                 <img src="{{asset($post->featured)}}" alt="" class="img-fluid">
                                 <div class="card-body">
-                                    <p>{!!Str::limit($post->description,150)!!}</p>
+                                    <p>
+                                        {!!Str::limit($post->description,150)!!}
+                                    </p>
                                 </div>
-                                <p class="text-end px-4"><small> {{$post->created_at->diffForHumans()}}</small> </p>
+                                <p class="text-end px-4">
+                                    <small>
+                                        {{$post->created_at->diffForHumans()}}
+                                    </small>
+                                </p>
                             </div>
                         </a>
                     </div>
@@ -52,5 +65,6 @@
             @endforeach
         </div>
     </div>
-    <div class="py-5"></div>
+    <div class="py-5">
+    </div>
 @endsection
