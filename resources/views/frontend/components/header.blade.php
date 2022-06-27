@@ -8,7 +8,6 @@
             <div class="card overflow-hidden">
                 <a href=""><img src="{{asset($adstop->ad_image)}}" class=" card-img-top" alt=""></a>
             </div>
-
         </div>
     </div>
 </div>
@@ -33,20 +32,27 @@
         <li class="nav-item px-3 ">
             <a class="nav-link fw-bold text-white" aria-current="page" href="/category/{{ $menu->slug }}">{{$menu->cat_nep}}</a>
         </li>
+        @endif
+        @endforeach
+
         <!-- Dropdown Menu -->
-        @else
+
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white fw-bold" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     थप+
                 </a>
                 <ul class="dropdown-menu dropdown-menu-danger" aria-labelledby="navbarDangerDropdownMenuLink">
-                  <li><a class="dropdown-item text-danger fw-bold" href="/category/{{ $menu->slug }}">{{$menu->cat_nep}}</a></li>
+                  <li>
+                    @foreach ($menus as $index=> $menu)
+                    @if ($index>9)
+                    <a class="dropdown-item text-danger fw-bold" href="/category/{{ $menu->slug }}">{{$menu->cat_nep}}</a>
+                    @endif
+                    @endforeach
+                </li>
                 </ul>
               </li>
             </ul>
-        @endif
-        @endforeach
         </ul>
       </div>
     </div>

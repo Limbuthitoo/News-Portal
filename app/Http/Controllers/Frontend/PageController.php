@@ -43,6 +43,7 @@ class PageController extends Controller
 
           /*===========Ads Infomtation=============*/
           $adstop= Ad::where('slug','topbar-ad')->first();
+          $catbodyad= Ad::where('slug','catbody-ad')->first();
 
           /*===========Company Infomtation=============*/
           $nepalnews =Nepalnews::first();
@@ -57,7 +58,7 @@ class PageController extends Controller
 
 
 
-        return view('frontend.pages.category',compact('nepalnews','adstop','menus','posts'));
+        return view('frontend.pages.category',compact('nepalnews','adstop','menus','posts','catbodyad'));
     }
     public function newsdetail($id)
     {
