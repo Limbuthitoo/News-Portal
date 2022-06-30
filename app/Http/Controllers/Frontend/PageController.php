@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+
+use App\Http\Controllers\Frontend\BaseController;
+use App\Http\Controllers\Frontend\DB;
 use App\Models\Nepalnews;
 use App\Models\Ad;
 use App\Models\Category;
@@ -10,20 +13,10 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\PostDec;
 
-class PageController extends Controller
+class PageController extends BaseController
 {
     public function home()
     {
-        /*===========Ads Infomtation=============*/
-        $adstop= Ad::where('slug','topbar-ad')->first();
-        $headad= Ad::where('slug','header-ad')->first();
-        $bodyad= Ad::where('slug','body-ad')->first();
-
-        /*===========Company Infomtation=============*/
-        $nepalnews =Nepalnews::first();
-
-        /*===========Company Infomtation=============*/
-        $menus = Category::all();
 
         // Latest pOST
         $posts = Post::orderBy('id','desc')->get();
@@ -36,20 +29,14 @@ class PageController extends Controller
         $catSport = Category::where('slug','sports')->first();
         $sports = $catSport -> posts;
 
-        return view("frontend.pages.home",compact('nepalnews','adstop','menus','posts','politics','headad','bodyad','category','sports','catSport'));
+        return view("frontend.pages.home",compact('posts','politics','category','sports','catSport'));
     }
     public function category($slug)
     {
 
           /*===========Ads Infomtation=============*/
-          $adstop= Ad::where('slug','topbar-ad')->first();
-          $catbodyad= Ad::where('slug','catbody-ad')->first();
 
-          /*===========Company Infomtation=============*/
-          $nepalnews =Nepalnews::first();
 
-          /*===========Company Infomtation=============*/
-          $menus = Category::all();
 
           /*===========Company category Post=============*/
 
@@ -58,22 +45,18 @@ class PageController extends Controller
 
 
 
-        return view('frontend.pages.category',compact('nepalnews','adstop','menus','posts','catbodyad'));
+        return view('frontend.pages.category',compact('posts'));
     }
     public function newsdetail($id)
     {
-         /*===========Ads Infomtation=============*/
-         $adstop= Ad::where('slug','topbar-ad')->first();
+        /*===========update Views Count=============*/
+        Post::find($id)->increment('views');
 
-         /*===========Company Infomtation=============*/
-         $nepalnews =Nepalnews::first();
-
-         /*===========Company Infomtation=============*/
-         $menus = Category::all();
-
-         /*===========Company Post=============*/
-
+        /*===========Company Post=============*/
          $posts = Post::find($id);
-        return view('frontend.pages.newsdetail',compact('adstop','nepalnews','menus','posts'));
+
+
+
+         return view('frontend.pages.newsdetail',compact('posts'));
     }
 }
