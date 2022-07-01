@@ -31,7 +31,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('/nepalnews',NepalnewsController::class);
-Route::resource('/posts',PostController::class);
-Route::resource('/categories',CategoryController::class);
-Route::resource('/ads',AdController::class);
+
+Route::middleware(['admin'])->group(function(){
+    Route::resource('/nepalnews',NepalnewsController::class);
+    Route::resource('/posts',PostController::class);
+    Route::resource('/categories',CategoryController::class);
+    Route::resource('/ads',AdController::class);
+});
+
