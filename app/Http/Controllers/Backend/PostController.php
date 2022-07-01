@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -16,7 +17,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('id','desc')->paginate(8);
         return view("backend.posts.index",compact("posts"));
     }
 
@@ -27,7 +28,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view("backend.posts.create");
+        $categories = Category::all();
+        return view('backend.posts.create',compact('categories'));
     }
 
     /**
@@ -49,6 +51,8 @@ class PostController extends Controller
             $post ->featured = "images/$newName";
         }
         $post ->save();
+        $post->categories()->attach($request->category_id);
+
         return redirect("/posts");
     }
 
@@ -71,8 +75,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::all();
         $post = Post::find($id);
-        return view("backend.posts.edit",compact("post"));
+        return view("backend.posts.edit",compact("post","categories"));
     }
 
     /**
@@ -95,6 +100,8 @@ class PostController extends Controller
             $post ->featured = "images/$newName";
         }
         $post ->update();
+        $post->categories()->sync($request->category_id);
+
         return redirect("/posts");
     }
 
@@ -106,6 +113,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+        return redirect("/posts");
     }
 }
