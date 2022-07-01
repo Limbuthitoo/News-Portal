@@ -13,8 +13,8 @@
                         <span class="count bg-success"></span>
                     </div>
                     <div class="profile-name">
-                        <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                        <span>Gold Member</span>
+                        <h5 class="mb-0 font-weight-normal">{{ Auth::user()->name }}</h5>
+                        <span>Admin</span>
                     </div>
                 </div>
                 <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -59,11 +59,19 @@
             <span class="nav-link">Navigation</span>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/home">
                 <span class="menu-icon">
                     <i class="mdi mdi-speedometer"></i>
                 </span>
                 <span class="menu-title">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="/categories">
+                <span class="menu-icon">
+                    <i class="mdi mdi-playlist-play"></i>
+                </span>
+                <span class="menu-title">Category</span>
             </a>
         </li>
         <li class="nav-item menu-items">
@@ -77,19 +85,11 @@
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="/nepalnews">Company Information</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="/post">Post</a></li>
-
+                    <li class="nav-item"> <a class="nav-link" href="/posts">Post</a></li>
                 </ul>
             </div>
         </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
-                <span class="menu-icon">
-                    <i class="mdi mdi-playlist-play"></i>
-                </span>
-                <span class="menu-title">Form Elements</span>
-            </a>
-        </li>
+
         <li class="nav-item menu-items">
             <a class="nav-link" href="pages/tables/basic-table.html">
                 <span class="menu-icon">

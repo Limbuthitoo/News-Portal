@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Nepal News</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
@@ -22,6 +22,14 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/assets/images/favicon.png" />
+
+    <!-- ckeditor -->
+    <style>
+        .ck-editor__editable_inline {
+            min-height: 200px;
+            color: black;
+        }
+        </style>
 </head>
 
 <body>
@@ -198,7 +206,7 @@
                                 <div class="navbar-profile">
                                     <img class="img-xs rounded-circle" src="/assets/images/faces/face15.jpg"
                                         alt="">
-                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{Auth::user()->name}}</p>
                                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                                 </div>
                             </a>
@@ -281,6 +289,20 @@
     <!-- Custom js for this page -->
     <script src="/assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
+
+    <!-- Ckeditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+
+            .create( document.querySelector( '#description' ) )
+
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+
+
 </body>
 
 </html>

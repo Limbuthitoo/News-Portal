@@ -3,12 +3,11 @@
     <div class="card p-4">
         <div class="card-title">
             <span class="h3">Company Infomration</span>
-            @if ($company->isEmpty)
+            @if (empty($company))
                 <a href="/nepalnews/create" class="btn btn-success float-right">Add Company</a>
             @endif
-
         </div>
-        <div class="card body">
+        <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -22,11 +21,20 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{{ $company->name }}</td>
+                                @if (!empty($company))
+                                <td>{{ $company->name }}</td>
                             <td>{{ $company->address }}</td>
                             <td>{{ $company->email }}</td>
                             <td>{{ $company->contact }}</td>
-                            <td><a href="/nepalnews/{{ $company->id }}/edit" class="btn btn-success">Edit</a></td>
+                            <td>
+                                <form action="/nepalnews/{{ $company->id }}" method="post">
+                                    @csrf
+                                    @method("delete")
+                                    <a href="/nepalnews/{{ $company->id }}/edit" class="btn btn-success">Edit</a>
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                            @endif
                         </tr>
                     </tbody>
                 </table>

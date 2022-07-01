@@ -8,22 +8,22 @@ use Illuminate\Http\Request;
 
 class NepalnewsController extends Controller
 {
-    /**
+    /***
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     ***/
     public function index()
     {
         $company = Nepalnews::first();
         return view ('backend.nepalnews.index',compact('company'));
     }
 
-    /**
+    /***
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     ***/
     public function create()
     {
         return view ('backend.nepalnews.create');
@@ -95,7 +95,29 @@ class NepalnewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nepalnews = Nepalnews::find($id);
+        $nepalnews->name = $request->name;
+        $nepalnews->address = $request->address;
+        $nepalnews->email = $request->email;
+        $nepalnews->contact = $request->contact;
+        $nepalnews->registration = $request->registration;
+        $nepalnews->pan = $request->pan;
+        $nepalnews->doib = $request->doib;
+        $nepalnews->facebook = $request->facebook;
+        $nepalnews->instagram = $request->instagram;
+        $nepalnews->tiktok = $request->tiktok;
+        $nepalnews->सम्पादक = $request->सम्पादक;
+        $nepalnews->निर्देशक = $request->निर्देशक;
+        $nepalnews->संवाददाता = $request->संवाददाता;
+
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $newName = time() . $file -> getClientOriginalName();
+            $file -> move("images", $newName);
+            $nepalnews -> logo = "images/$newName";
+        }
+        $nepalnews -> update();
+        return redirect("/nepalnews");
     }
 
     /**
@@ -106,6 +128,8 @@ class NepalnewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $company = Nepalnews::find($id);
+        $company -> delete();
+        return redirect("/nepalnews");
     }
 }

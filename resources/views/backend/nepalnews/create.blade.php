@@ -7,7 +7,6 @@
                     <span class="h3">General Setting</span>
                 </div>
                 <div class="card-body">
-
                     <form action="/nepalnews" method="post" class="form-sample" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
@@ -15,23 +14,16 @@
                             <input class="form-control" type="text" id="name" name="name"
                                 placeholder="Enter Company Name">
                         </div>
-
-
                         <div class="form-group">
                             <label for="address" class="">Company Address:</label>
                             <input class="form-control" type="text" id="address" name="address"
                                 placeholder="Enter Company Address">
                         </div>
-
-
                         <div class="form-group">
                             <label for="email" class="">Company Email:</label>
                             <input class="form-control" type="text" id="email" name="email"
                                 placeholder="Enter Company Email">
                         </div>
-
-
-
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -39,7 +31,6 @@
                                     <input class="form-control" type="text" id="contact" name="contact"
                                         placeholder="Enter company contact">
                                 </div>
-
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -47,9 +38,7 @@
                                     <input class="form-control" type="text" id="registration" name="registration"
                                         placeholder="Enter company registration no">
                                 </div>
-
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -95,11 +84,11 @@
                                 placeholder="Update Logo" accept="image/jpg, image/png">
                         </div>
                         <button type="submit" class="btn btn-success">Save Record</button>
-                    </form>
+                        <a href="/posts" class="btn btn-danger">Back</a>
 
+                    </form>
                 </div>
             </div>
         </div>
-
     </div>
 @endsection
