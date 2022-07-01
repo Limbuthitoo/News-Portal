@@ -49,14 +49,14 @@ class PageController extends BaseController
     }
     public function newsdetail($id)
     {
-        /*===========update Views Count=============*/
-        Post::find($id)->increment('views');
+
 
         /*===========Company Post=============*/
-         $posts = Post::find($id);
+         $post = Post::find($id);
 
+        /*===========update Views Count=============*/
+         $post->increment('views');
 
-
-         return view('frontend.pages.newsdetail',compact('posts'));
+         return view('frontend.pages.newsdetail',compact('post'));
     }
 }
