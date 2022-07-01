@@ -6,6 +6,8 @@ use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\AdController;
+use App\Http\Controllers\Backend\SeoController;
+
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -37,5 +39,6 @@ Route::middleware(['admin'])->group(function(){
     Route::resource('/posts',PostController::class);
     Route::resource('/categories',CategoryController::class);
     Route::resource('/ads',AdController::class);
+    Route::resource('/seo',SeoController::class);
 });
 

@@ -90,6 +90,14 @@
             </a>
         </li>
         <li class="nav-item menu-items">
+            <a class="nav-link" href="/seo">
+                <span class="menu-icon">
+                    <i class="mdi mdi-table-large"></i>
+                </span>
+                <span class="menu-title">Seo</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-icon">
                     <i class="mdi mdi-laptop"></i>
