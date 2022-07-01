@@ -20,7 +20,7 @@ return new class extends Migration
             $table ->String("slug");
             $table ->LongText("description");
             $table ->String("featured");
-            $table ->integer("views")->nullable();
+            $table ->integer("views")->default(0);
             $table->timestamps();
         });
     }

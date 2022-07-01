@@ -3,10 +3,10 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-8">
-                <h1>{{$posts->title}}</h1>
-                <img src="{{asset($posts->featured)}}" alt="" class="img-fluid">
+                <h1>{{$post->title}}</h1>
+                <img src="{{asset($post->featured)}}" alt="" class="img-fluid">
                 <div class="py-2">
-                    {!!$posts->description!!}
+                    {!!$post->description!!}
                 </div>
             </div>
             <div class="col-lg-4">
