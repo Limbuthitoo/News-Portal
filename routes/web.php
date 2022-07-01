@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\NepalnewsController;
 use App\Http\Controllers\Backend\PostController;
+use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Backend\CategoryController;
-
-
-
+use App\Http\Controllers\Backend\AdController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +19,23 @@ use App\Http\Controllers\Backend\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [PageController::class, 'home']);
+Route::get('/category/{slug}', [PageController::class, 'category']);
+Route::get('/news/{id}', [PageController::class, 'newsdetail']);
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('/nepalnews',NepalnewsController::class);
-Route::resource('/posts',PostController::class);
-Route::resource('/categories',CategoryController::class);
+
+Route::middleware(['admin'])->group(function(){
+    Route::resource('/nepalnews',NepalnewsController::class);
+    Route::resource('/posts',PostController::class);
+    Route::resource('/categories',CategoryController::class);
+    Route::resource('/ads',AdController::class);
+});
+
